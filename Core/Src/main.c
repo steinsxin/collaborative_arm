@@ -22,11 +22,9 @@
 #include "can.h"
 #include "gpio.h"
 
-// application includes
-#include "bsp_can.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "bsp_can.h"
 
 /* USER CODE END Includes */
 

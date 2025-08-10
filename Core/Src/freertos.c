@@ -48,6 +48,7 @@
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
+osThreadId CANSendTestTaskHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -55,6 +56,7 @@ osThreadId defaultTaskHandle;
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void const * argument);
+extern void can_send_test_task(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -105,6 +107,10 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
+  /* definition and creation of CANSendTestTask */
+  osThreadDef(CANSendTestTask, can_send_test_task, osPriorityNormal, 0, 256);
+  CANSendTestTaskHandle = osThreadCreate(osThread(CANSendTestTask), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -122,7 +128,8 @@ void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
-  vTaskDelete(NULL);
+//    vTaskDelete(CANSendTestTaskHandle);
+    vTaskDelete(NULL);
   /* USER CODE END StartDefaultTask */
 }
 
