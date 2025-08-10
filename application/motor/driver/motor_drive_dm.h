@@ -14,6 +14,7 @@
 // application层
 #include "motor_interface.h"
 
+// DM10010L-MIT
 // ==================== 命令 ID ====================
 /**
  * @brief DM 电机命令枚举
