@@ -59,6 +59,10 @@ include_directories(
         Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F
         bsp/
         application/
+        application/can
+        application/motor
+        application/task
+        application/usb
 )
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx)
