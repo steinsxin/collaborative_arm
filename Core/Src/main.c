@@ -22,6 +22,9 @@
 #include "can.h"
 #include "gpio.h"
 
+// application includes
+#include "bsp_can.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -92,6 +95,9 @@ int main(void)
   MX_CAN1_Init();
   MX_CAN2_Init();
   /* USER CODE BEGIN 2 */
+    // Initialize CAN peripherals
+    BSP_CAN1_Init();
+    BSP_CAN2_Init();
 
   /* USER CODE END 2 */
 
