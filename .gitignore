@@ -1,0 +1,8 @@
+# 默认忽略的文件
+/.idea
+/.project
+/.cproject
+/.mxproject
+/cmake-build-debug
+# 保留 hex
+!/cmake-build-debug/collaborative_arm.hex
